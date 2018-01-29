@@ -11,10 +11,10 @@ var pass = "e8Uj@w)&quot;Z5";
 var name = "sgarripelly";
 var contentUrl = "IAAP";
 var xml = "<tsRequest><credentials name='" + name + "' password='" + pass + "'><site contentUrl='"+ contentUrl + "'/></credentials></tsRequest>";
-$.ajax({	
-	url: authUrl,
-	data: xml,
+$.ajax({
 	type: "POST",
+	url: authUrl,
+	data: xml,	
 	headers: {
 	contentType: "text/xml",
 		'Access-Control-Allow-Origin': '*'
