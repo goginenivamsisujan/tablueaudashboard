@@ -11,28 +11,22 @@ var pass = "e8Uj@w)&quot;Z5";
 var name = "sgarripelly";
 var contentUrl = "IAAP";
 var xml = "<tsRequest><credentials name='" + name + "' password='" + pass + "'><site contentUrl='"+ contentUrl + "'/></credentials></tsRequest>";
-$( document ).bind( "mobileinit", function() {
-	$.support.cors = true;
-	$.mobile.allowCrossDomainPages = true;
-	$.mobile.pushStateEnabled      = false;
-});
 $.ajax({	
-    url: authUrl,
-    data: xml,
-    type: 'POST',    
-    dataType: "text",
+	url: authUrl,
+	data: xml,
+	type: "POST",
 	headers: {
-		contentType: "text/xml",
-        'Access-Control-Allow-Origin': '*'
-    },
+	contentType: "text/xml",
+		'Access-Control-Allow-Origin': '*'
+	},
 	success : function(response){
 		console.log(response);
 		alert(response);
 	},
-    error : function (xhr, ajaxOptions, thrownError){  
-		console.log(xhr.status);          
-        console.log(thrownError);
-    } 
+	error : function (xhr, ajaxOptions, thrownError){  
+	console.log(xhr.status);          
+	console.log(thrownError);
+	} 
 }); 
 </script>
 </body>
