@@ -13,10 +13,11 @@ var contentUrl = "IAAP";
 var xml = "<tsRequest><credentials name='" + name + "' password='" + pass + "'><site contentUrl='"+ contentUrl + "'/></credentials></tsRequest>";
 $.ajax({
 	type: "POST",
+	contentType: "application/xml",
 	url: authUrl,
 	data: xml,	
 	headers: {
-	contentType: "application/xml",
+	"Content-type": "application/xml",
 		'Access-Control-Allow-Origin': '*'
 	},
 	success : function(response){
